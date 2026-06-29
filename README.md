@@ -86,7 +86,7 @@ Se você precisar retreinar o modelo ou atualizar os arquivos `.pkl` após mudan
 ```bash
 python train_model.py
 ```
-*(Nota: O arquivo do dataset bruto possui 117MB e está listado no `.gitignore` para não ser commitado no repositório do GitHub).*
+*(Nota: baixar o dataset com link nos requirements(1).pdf).*
 
 ---
 
