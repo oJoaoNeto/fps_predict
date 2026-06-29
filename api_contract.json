@@ -1,0 +1,248 @@
+{
+  "endpoints": {
+    "predict_fps": {
+      "url": "/api/predict-fps/",
+      "method": "POST",
+      "description": "Calcula a previsão de FPS de CS:GO utilizando inferência do modelo Gradient Boosting Regressor com base nas especificações detalhadas do processador e placa de vídeo selecionados, tamanho da memória RAM, resolução e nível de qualidade gráfica.",
+      "request_example": {
+        "game_id": 1,
+        "cpu_id": 2,
+        "gpu_id": 8,
+        "ram_gb": 16,
+        "resolution": "1080p",
+        "quality_preset": "Low"
+      },
+      "response_example": {
+        "id": 1,
+        "game": 1,
+        "cpu": 2,
+        "gpu": 8,
+        "ram_gb": 16,
+        "resolution": "1080p",
+        "quality_preset": "Low",
+        "predicted_fps": 312.4,
+        "created_at": "2026-06-29T00:35:12.123456Z",
+        "game_details": {
+          "id": 1,
+          "name": "Counter-Strike: Global Offensive / CS2",
+          "steam_id": "730",
+          "cover_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg",
+          "genre": "Action, FPS",
+          "min_requirements": {
+            "os": "Windows® 10",
+            "processor": "Intel® Core™ i5 750 or AMD Phenom™ II X4 955",
+            "memory": "8 GB RAM",
+            "graphics": "DirectX 11, Shader Model 5.0 compatible video card with 1 GB or more VRAM",
+            "storage": "85 GB available space"
+          },
+          "rec_requirements": {
+            "os": "Windows® 10/11 64-bit",
+            "processor": "Intel® Core™ i7 9700k or AMD Ryzen™ 7 3700X",
+            "memory": "16 GB RAM",
+            "graphics": "DirectX 12 compatible video card with 6 GB VRAM",
+            "storage": "85 GB available SSD space"
+          }
+        },
+        "cpu_details": {
+          "id": 2,
+          "name": "Ryzen 5 5600 (3.5GHz)",
+          "category": "CPU",
+          "price": "800.00",
+          "shop_link": "https://www.google.com/search?q=Ryzen+5+5600+(3.5GHz)",
+          "specs": {
+            "socket": "AM4",
+            "tdp": 65,
+            "score": 21000,
+            "CpuFrequency": 3500,
+            "CpuTurboClock": 4400,
+            "CpuNumberOfCores": 6,
+            "CpuNumberOfThreads": 12,
+            "CpuBaseClock": 100,
+            "CpuCacheL2": 3,
+            "CpuCacheL3": 32,
+            "CpuProcessSize": 7,
+            "CpuNumberOfTransistors": 10700
+          },
+          "is_active": true
+        },
+        "gpu_details": {
+          "id": 8,
+          "name": "RX 6600 (8GB)",
+          "category": "GPU",
+          "price": "1300.00",
+          "shop_link": "https://www.google.com/search?q=RX+6600+(8GB)",
+          "specs": {
+            "tdp": 132,
+            "score": 14000,
+            "GpuBoostClock": 2491,
+            "GpuBaseClock": 1626,
+            "GpuMemoryBus": 128,
+            "GpuMemorySize": 8,
+            "GpuBandwidth": 224000,
+            "GpuNumberOfShadingUnits": 1792,
+            "GpuNumberOfROPs": 64,
+            "GpuNumberOfTMUs": 112,
+            "GpuFP32Performance": 8928,
+            "GpuNumberOfTransistors": 11060,
+            "GpuPixelRate": 159400,
+            "GpuTextureRate": 279000,
+            "GpuDieSize": 237,
+            "GpuProcessSize": 7,
+            "GpuArchScore": 13,
+            "GpuMemTypeScore": 4
+          },
+          "is_active": true
+        }
+      }
+    },
+    "optimize_build": {
+      "url": "/api/optimize-build/",
+      "method": "POST",
+      "description": "Retorna a recomendacao otimizada de peças de computador completas e compativeis respeitando o teto de orcamento maximo fornecido. O desempenho e calculado com base no modelo de Machine Learning.",
+      "request_example": {
+        "budget": 5000.0,
+        "resolution": "1080p",
+        "quality_preset": "Medium",
+        "priority": "balance"
+      },
+      "response_example": {
+        "cpu": {
+          "id": 2,
+          "name": "Ryzen 5 5600 (3.5GHz)",
+          "category": "CPU",
+          "price": "800.00",
+          "shop_link": "https://www.google.com/search?q=Ryzen+5+5600+(3.5GHz)",
+          "specs": {
+            "socket": "AM4",
+            "tdp": 65,
+            "score": 21000,
+            "CpuFrequency": 3500,
+            "CpuTurboClock": 4400,
+            "CpuNumberOfCores": 6,
+            "CpuNumberOfThreads": 12,
+            "CpuBaseClock": 100,
+            "CpuCacheL2": 3,
+            "CpuCacheL3": 32,
+            "CpuProcessSize": 7,
+            "CpuNumberOfTransistors": 10700
+          },
+          "is_active": true
+        },
+        "gpu": {
+          "id": 8,
+          "name": "RX 6600 (8GB)",
+          "category": "GPU",
+          "price": "1300.00",
+          "shop_link": "https://www.google.com/search?q=RX+6600+(8GB)",
+          "specs": {
+            "tdp": 132,
+            "score": 14000,
+            "GpuBoostClock": 2491,
+            "GpuBaseClock": 1626,
+            "GpuMemoryBus": 128,
+            "GpuMemorySize": 8,
+            "GpuBandwidth": 224000,
+            "GpuNumberOfShadingUnits": 1792,
+            "GpuNumberOfROPs": 64,
+            "GpuNumberOfTMUs": 112,
+            "GpuFP32Performance": 8928,
+            "GpuNumberOfTransistors": 11060,
+            "GpuPixelRate": 159400,
+            "GpuTextureRate": 279000,
+            "GpuDieSize": 237,
+            "GpuProcessSize": 7,
+            "GpuArchScore": 13,
+            "GpuMemTypeScore": 4
+          },
+          "is_active": true
+        },
+        "motherboard": {
+          "id": 11,
+          "name": "Gigabyte B450M DS3H V2",
+          "category": "MOBO",
+          "price": "450.00",
+          "shop_link": "https://www.google.com/search?q=Gigabyte+B450M+DS3H+V2",
+          "specs": {
+            "socket": "AM4"
+          },
+          "is_active": true
+        },
+        "ram": {
+          "id": 16,
+          "name": "Corsair Vengeance LPX 16GB (2x8GB) DDR4 3200MHz",
+          "category": "RAM",
+          "price": "320.00",
+          "shop_link": "https://www.google.com/search?q=Corsair+Vengeance+LPX+16GB+(2x8GB)+DDR4+3200MHz",
+          "specs": {
+            "size_gb": 16
+          },
+          "is_active": true
+        },
+        "psu": {
+          "id": 19,
+          "name": "MSI MAG A650BN 650W 80 Plus Bronze",
+          "category": "PSU",
+          "price": "350.00",
+          "shop_link": "https://www.google.com/search?q=MSI+MAG+A650BN+650W+80+Plus+Bronze",
+          "specs": {
+            "wattage": 650
+          },
+          "is_active": true
+        },
+        "storage": {
+          "id": 22,
+          "name": "Kingston NV2 1TB M.2 NVMe SSD",
+          "category": "STORAGE",
+          "price": "400.00",
+          "shop_link": "https://www.google.com/search?q=Kingston+NV2+1TB+M.2+NVMe+SSD",
+          "specs": {
+            "size_gb": 1000
+          },
+          "is_active": true
+        },
+        "total_cost": "3620.00",
+        "fps_predicted": 232.8,
+        "budget_utilization_percent": 72.4,
+        "priority_applied": "balance",
+        "settings": {
+          "resolution": "1080p",
+          "quality_preset": "Medium"
+        }
+      }
+    },
+    "get_components": {
+      "url": "/api/components/",
+      "method": "GET",
+      "description": "Lista e filtra componentes de hardware ativos no sistema.",
+      "query_parameters": {
+        "category": "Filtrar por categoria: CPU, GPU, RAM, MOBO, PSU, STORAGE",
+        "min_price": "Preço mínimo",
+        "max_price": "Preço máximo"
+      },
+      "response_example": [
+        {
+          "id": 2,
+          "name": "Ryzen 5 5600 (3.5GHz)",
+          "category": "CPU",
+          "price": "800.00",
+          "shop_link": "https://www.google.com/search?q=Ryzen+5+5600+(3.5GHz)",
+          "specs": {
+            "socket": "AM4",
+            "tdp": 65,
+            "score": 21000,
+            "CpuFrequency": 3500,
+            "CpuTurboClock": 4400,
+            "CpuNumberOfCores": 6,
+            "CpuNumberOfThreads": 12,
+            "CpuBaseClock": 100,
+            "CpuCacheL2": 3,
+            "CpuCacheL3": 32,
+            "CpuProcessSize": 7,
+            "CpuNumberOfTransistors": 10700
+          },
+          "is_active": true
+        }
+      ]
+    }
+  }
+}

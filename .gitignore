@@ -1,0 +1,6 @@
+db.sqlite3
+csv_result-fps-in-video-games.csv
+fps_features_csgo_1080p_low.pkl
+fps_medians_csgo_1080p_low.pkl
+fps_model_csgo_1080p_low.pkl
+__pycache__/
